@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Event
+{% endblock %}
+
+{% block main %}
+<!-- Required Input boxes to add event -->
+    <h1>Add Event</h2>
+    <hr>
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="city" name="city" placeholder="City" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="state" name="state" placeholder="State Abbreviation" type="text" maxlength="2">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="address" name="address" placeholder="Street Address" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="month" name="month" placeholder="Month" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="date" name="date" placeholder="Date" type="number">
+        </div>
+        <hr>
+        <!-- All checkbox options for description of event -->
+        <h2>Description</h2>
+        <input type="checkbox" name="description" value="Sporting Events">Sporting Events<br>
+        <input type="checkbox" name="description" value="Social Events">Social Events<br>
+        <input type="checkbox" name="description" value="Live Shows">Live Shows<br>
+        <input type="checkbox" name="description" value="Food">Food<br>
+        <input type="checkbox" name="description" value="Arts">Arts<br>
+        <input type="checkbox" name="description" value="Big Crowd">Big Crowd<br>
+        <input type="checkbox" name="description" value="Small Crowd">Small Crowd<br>
+        <input type="checkbox" name="description" value="Intimate">Intimate<br>
+        <input type="checkbox" name="description" value="Family Friendly">Family Friendly<br>
+        <input type="checkbox" name="description" value="21+">21+<br>
+        <input type="checkbox" name="description" value="$">$<br>
+        <input type="checkbox" name="description" value="$$">$$<br>
+        <input type="checkbox" name="description" value="$$$">$$$<br>
+
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="comments" name="comments" placeholder="Additional Comments" type="text"><br>
+    </div>
+    <button class="btn btn-primary" type="submit">Add Event</button>
+    </form>
+{% endblock %}

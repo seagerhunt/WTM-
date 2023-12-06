@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ratings
+{% endblock %}
+
+{% block main %}
+    <h1>Rate an Event</h2>
+    <hr>
+    <table class="table table-striped">
+        <!-- column names -->
+        <tr>
+            <th class="text-start">Name</th>
+            <th class="text-start">Comments</th>
+            <th class="text-start">Rating / 10</th>
+            <th class="text-end">Submit Rating</th>
+        </tr>
+        <!-- list of all events attended -->
+        {% for event in events %}
+            <form action="/ratings" method="post">
+                <tr>
+                    <input type="hidden" name="event_id" value="{{ event['event_id'] }}">
+                <!-- event name -->
+                    <td class="text-start" name="event_id" value="{{ event['event_id'] }}">{{ event['name'] }}</td>
+                <!-- comment input -->
+                    <td class="text-start">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="comment" placeholder="comment" type="text">
+                    </td>
+                <!-- rating input -->
+                    <td class="text-start">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="rating" placeholder="rating" type="number">
+                    </td>
+                <!-- submit button -->
+                    <td class ="text-end">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </td>
+                </tr>
+            </form>
+        {% endfor %}
+    </table>
+
+{% endblock %}

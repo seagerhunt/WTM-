@@ -1,0 +1,127 @@
+body {
+    background-color: #E5CCFF;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+
+.search-row {
+    display: flex;
+    gap: 10px;
+    /* may need to adjust */
+}
+
+.home {
+    background-image: url('https://m.media-amazon.com/images/I/61CPHKYgMaL._AC_UF1000,1000_QL80_.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+
+.styled-checkboxes {
+    padding: 10px;
+    max-width: 400px;
+    /* Adjust the width as needed */
+    margin: 0 auto;
+    /* Center the container horizontally */
+}
+
+h1 {
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    /* Gradient background */
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    /* Text color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+}
+
+h2 {
+    background: linear-gradient(to left, #4CAF50, #2196F3);
+    /* Gradient background */
+    color: #fff;
+    /* Text color */
+    padding: 10px;
+    /* Padding for spacing */
+    text-align: center;
+    /* Center the text */
+    border-bottom: 3px solid #1565C0;
+    /* Border for a nice separation line */
+    margin-bottom: 20px;
+    /* Adjust margin as needed */
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #333;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody+tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+    /* Light blue background for odd rows */
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    /* Slightly darker blue background on hover */
+}
+
+.preferences-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #333;
+    border-collapse: collapse;
+}
+
+.preferences-table th,
+.preferences-table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.preferences-table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.preferences-table tbody+tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.preferences-table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.preferences-table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}

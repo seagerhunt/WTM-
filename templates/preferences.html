@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Preferences
+{% endblock %}
+
+{% block main %}
+    <form action="/preferences" method="post">
+        <table class="table table-striped">
+            <header>
+            <!-- header -->
+                <h1 style="text-align:center;">Edit Preferences</h1>
+            </header>
+        <!-- checkboxes -->
+            {% for adj in adjectives %}
+        <!-- if person already has preference checked -->
+                {% if adj in preferences %}
+                    <input type="checkbox" name="preferences" value="{{ adj }}" checked>{{ adj }}<br>
+        <!-- if person does not already have preference checked -->
+                {% else %}
+                    <input type="checkbox" name="preferences" value="{{ adj }}">{{ adj }}<br>
+                {% endif %}
+            {% endfor %}
+        </table>
+    <!-- submit button -->
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

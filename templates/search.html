@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Events
+{% endblock %}
+
+{% block main %}
+    <h1>Search Results</h2>
+    <hr>
+    <form action="/search" method="post">
+        <fieldset>
+            <!-- header -->
+            <legend>Event Details</legend>
+            <!-- text inputs for different categories -->
+            <div class="search-row">
+                <label for="name">Name:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
+
+                <label for="city">City:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="city" name="city" placeholder="City" type="text">
+
+                <label for="state">State:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="state" name="state" placeholder="State Abbreviation" type="text">
+
+                <label for="month">Month:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="month" name="month" placeholder="Month" type="number">
+
+                <label for="date">Date:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="date" name="date" placeholder="Date" type="number">
+            </div>
+        </fieldset>
+
+        <!-- checkboxes for different descriptions -->
+        <fieldset class="styled-checkboxes">
+            <hr>
+            <h2>Description</h2>
+            <div class="checkbox-group">
+                <input type="checkbox" name="description" value="Sporting Events">Sporting Events<br>
+                <input type="checkbox" name="description" value="Social Events">Social Events<br>
+                <input type="checkbox" name="description" value="Live Shows">Live Shows<br>
+                <input type="checkbox" name="description" value="Food">Food<br>
+                <input type="checkbox" name="description" value="Arts">Arts<br>
+                <input type="checkbox" name="description" value="Big Crowd">Big Crowd<br>
+                <input type="checkbox" name="description" value="Small Crowd">Small Crowd<br>
+                <input type="checkbox" name="description" value="Intimate">Intimate<br>
+                <input type="checkbox" name="description" value="Family Friendly">Family Friendly<br>
+                <input type="checkbox" name="description" value="21+">21+<br>
+                <input type="checkbox" name="description" value="$">$<br>
+                <input type="checkbox" name="description" value="$$">$$<br>
+                <input type="checkbox" name="description" value="$$$">$$$<br>
+            </div>
+        </fieldset>
+
+        <!-- submit button -->
+        <button class="btn btn-primary" type="submit">Search Events</button>
+    </form>
+{% endblock %}

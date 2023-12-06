@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <form action="/searched" method="post">
+        <table class="table table-striped">
+        <!-- column headers -->
+            <tr>
+                <th class="text-start">Name</th>
+                <th class="text-start">City</th>
+                <th class="text-start">State</th>
+                <th class="text-end">Description</th>
+                <th class="text-end">Month</th>
+                <th class="text-end">Date</th>
+                <th class="text-end">Attended</th>
+            </tr>
+        <!-- list of all event search results -->
+            {% for event_item, attendance_item in zipped_lists %}
+        <!-- display information -->
+                <tr>
+                    <td class="text-start">{{ event_item['name'] }}</td>
+                    <td class="text-start">{{ event_item['city'] }}</td>
+                    <td class="text-start">{{ event_item['state'] }}</td>
+                    <td class="text-end">{{ event_item['comments'] }}</td>
+                    <td class="text-end">{{ event_item['month'] }}</td>
+                    <td class="text-end">{{ event_item['date'] }}</td>
+                    <td class="text-end">
+                <!-- if not attended, display button -->
+                        {% if attendance_item['attended'] == 0 %}
+                            <button type="submit" name="event_id" value="{{ event_item['event_id'] }}">Attend</button>
+                <!-- if attended, no button -->
+                        {% elif attendance_item['attended'] == 1 %}
+                            <p>Attending</p>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+{% endblock %}

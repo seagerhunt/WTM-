@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <form action="/profile" method="post">
+
+        <body>
+            <header>
+            <!-- header -->
+                <h1 style="text-align:center;">Personal Profile for {{ username  }}</h1>
+            </header>
+            <table class="table table-striped">
+                <tr>
+                <!-- table header -->
+                    <th class="text-start">Current Preferences</th>
+                <!-- link to edit preferences -->
+                    <a href="/preferences">Edit your preferences here</a>
+                </tr>
+            <!-- list of all selected preferences -->
+                {% for preference in preferences %}
+                    <tr>
+                        <td class="text-start">{{ preference['adjective'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <hr>
+
+        <!-- table header -->
+            <h2>Events Attended</h2>
+            <table class="table table-striped">
+            <!-- column names -->
+                <tr>
+                    <th class="text-start">Name</th>
+                    <th class="text-start">City</th>
+                    <th class="text-end">Month</th>
+                    <th class="text-end">Date</th>
+                </tr>
+            <!-- lists all events attended -->
+                {% for event in events_attended %}
+                    <tr>
+                        <td class="text-start">{{ event['name'] }}</td>
+                        <td class="text-start">{{ event['city'] }}</td>
+                        <td class="text-end">{{ event['comments'] }}</td>
+                        <td class="text-end">{{ event['month'] }}/{{ event['date'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <hr>
+
+        <!-- table header -->
+            <h2>Personal Activity</h2>
+            <table class="table table-striped">
+            <!-- sub header -->
+                <tr>
+                    <th class="text-start">Added Events</th>
+                </tr>
+            <!-- list of all events added -->
+                {% for info in events_created %}
+                    <tr>
+                        <td class="text-start">Name: {{ info.name }}, Date: {{ info.month }}/{{ info.date }}</td>
+                    </tr>
+                {% endfor %}
+            <!-- sub header -->
+                <tr>
+                    <th class="text-start">Events You've Rated</th>
+                </tr>
+            <!-- list of all events rated -->
+                {% for info in ratings %}
+                    <tr>
+                        <td class="text-start">Name: {{ info.name }}, Rating: {{ info.rating }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </body>
+    </form>
+{% endblock %}
